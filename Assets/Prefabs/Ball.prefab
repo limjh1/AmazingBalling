@@ -126,6 +126,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2480153cea71e64eaee64e9490d4369, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  whatIsProp:
+    serializedVersion: 2
+    m_Bits: 64
   explosionParticle: {fileID: 2039171640260968657}
   explosionAudio: {fileID: 7875149192007027854}
   maxDamage: 100

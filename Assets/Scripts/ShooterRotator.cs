@@ -11,6 +11,8 @@ public class ShooterRotator : MonoBehaviour
     private RotateState state = RotateState.Idle;
     public float verticalRotateSpeed = 360f;
     public float horizontalRotateSpeed = 360f;
+    
+    public BallShooter ballShooter;
 
     void Update() {
         if(state == RotateState.Idle){
@@ -29,7 +31,14 @@ public class ShooterRotator : MonoBehaviour
             }
             else if(Input.GetButtonUp("Fire1")){
                 state = RotateState.Ready;
+                ballShooter.enabled = true; //레디가 되었을 때 볼 슈터가 트루가 된다
             }
         }
+    }
+
+    private void OnEnable() {
+        transform.rotation = Quaternion.identity; //0도 0도 0도로 회전각도 리셋
+        state = RotateState.Idle;
+        ballShooter.enabled = false; //초기화 될 때 꺼버림
     }
 }
