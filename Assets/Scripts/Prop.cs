@@ -18,6 +18,8 @@ public class Prop : MonoBehaviour
             AudioSource explosionAudio = instance.GetComponent<AudioSource>();
             explosionAudio.Play();
 
+            GameManager.instance.AddScore(score);
+
             //인스턴스 삭제해줘 인스턴스 듀레이션 지나면
             Destroy(instance.gameObject, instance.duration);
             gameObject.SetActive(false);
