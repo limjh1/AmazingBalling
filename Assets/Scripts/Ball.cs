@@ -40,8 +40,7 @@ public class Ball : MonoBehaviour
 
         explosionParticle.Play();
         explosionAudio.Play();
-
-        GameManager.instance.OnBallDestroy();
+       
 
         //특수효과 duration(재생시간) 다 재생되면 삭제
         Destroy(explosionParticle.gameObject,explosionParticle.duration);
@@ -64,5 +63,9 @@ public class Ball : MonoBehaviour
         damage = Mathf.Max(0, damage);
 
         return damage;
+    }
+
+    private void OnDestroy() {
+        GameManager.instance.OnBallDestroy();
     }
 }
